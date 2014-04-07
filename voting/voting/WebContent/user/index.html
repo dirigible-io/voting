@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MVP Voting</title>
+
+   <link rel="stylesheet"  href="../../../components/bootstrap/dist/css/bootstrap.min.css">
+
+     <script src="../../../components/angular/angular.min.js"></script>
+  
+    <script src="scripts/app.js"></script>
+</head>
+
+<body>
+<div class="container" ng-controller="VotesController">
+    
+    <div class="navbar navbar-default" role="navigation">
+          <a class="navbar-brand bid-brand" href="#/">MVP Voting</a>
+          <ul class="nav navbar-nav navbar-right hidden-xs">
+            <li>
+              <a>Logged in: {{ userInfo.loggedInUser }}</a>
+            </li>
+          </ul>
+    </div>
+        
+        <div class="panel panel-info">
+            <div class="panel-heading">Message:</div>
+            <div ng-show="items && !voted" class="panel-body">
+                <span style="font-size:20px;" class="label label-default">You can vote only once!</span>
+            </div>
+            <div ng-show="items && voted" class="panel-body">
+                <span style="font-size:20px;" class="label label-success">Thank you, you`ve voted!</span>
+            </div>
+        </div>
+    
+    
+    <div class="panel panel-default">
+
+    <div ng-show="panelTitle" class="panel-heading"><strong>{{ panelTitle }}</strong></div>
+  
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th  ng-repeat="column in columns">{{ column.display }} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  ng-repeat="item in items">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.team }}</td>
+                    <td>
+                          <button title="Click to vote!" ng-disabled="voted" ng-hide="item.userInfo" type="button" ng-click="vote(item)" class="btn btn-success">
+                              <span class="glyphicon glyphicon-thumbs-up"></span>
+                          </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "tableName":"PLAYER",
+  "columns":
+    [
+      {
+        "name":"ID",
+        "type":"INTEGER",
+        "length":"0",
+        "notNull":"false",
+        "primaryKey":"true",
+        "defaultValue":""
+      }
+      ,
+      {
+        "name":"NAME",
+        "type":"VARCHAR",
+        "length":"50",
+        "notNull":"true",
+        "primaryKey":"false",
+        "defaultValue":""
+      }
+      ,
+      {
+        "name":"TEAM",
+        "type":"VARCHAR",
+        "length":"20",
+        "notNull":"true",
+        "primaryKey":"false",
+        "defaultValue":""
+      }
+    ]
+}

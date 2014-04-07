@@ -1,0 +1,19 @@
+[
+  {
+    "location":"/voting/user",
+    "roles":
+      [
+        {"role":"User"},
+        {"role":"Everyone"},
+        {"role":"PowerUser"}
+      ]
+  },
+  {
+    "location":"/voting/admin",
+    "roles":
+      [
+        {"role":"Administrator"}
+      ]
+  }
+]
+
