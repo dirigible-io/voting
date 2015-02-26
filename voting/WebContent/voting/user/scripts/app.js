@@ -1,6 +1,6 @@
 function VotesController($scope, $http){
-    var playersUrl = "/dirigible/js-secured/voting/user/players.js";
-    var votesUrl = "/dirigible/js-secured/voting/user/vote.js";
+    var playersUrl = "/dirigible/services/js-secured/voting/user/players.js";
+    var votesUrl = "/dirigible/services/js-secured/voting/user/vote.js";
     
     $scope.voted = undefined;
     $scope.columns = [

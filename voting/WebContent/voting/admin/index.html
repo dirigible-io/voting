@@ -8,8 +8,8 @@
     <meta name="author" content="">
 
     <title>MVP Administrating</title>
-    
-    <link href="../../../components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body style="height: 100%;">
@@ -27,7 +27,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/dirigible/web-secured/voting/admin/">MVP Standings</a>
+                <a class="navbar-brand" href="/dirigible/services/web-secured/voting/admin/">MVP Standings</a>
               </div>
               
               <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -40,10 +40,10 @@
 
 	  </div>
       
-      </br>
-      </br>
-      </br>
-      </br>
+      <br>
+      <br>
+      <br>
+      <br>
       <div class="container">
     	  <div class="panel panel-default" >
           
@@ -80,9 +80,11 @@
       </div>
     </div>
 
-    <script src="../../../components/jquery/jquery.min.js"></script>
-    <script src="../../../components/bootstrap/dist/js/bootstrap.min.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 	<script>
 		   $( document ).ready(function() {
               
@@ -109,14 +111,10 @@
 		  		  
 	</script>
     
-
-	<script src="../../../components/angular/angular.min.js"></script>
-	<script src="../../../components/angular-resource/angular-resource.min.js"></script>
-
 	<script type="text/javascript">
 		function ManageController($scope, $http){
 			
-			var url = '/dirigible/js-secured/voting/admin/players.js?result=true';
+			var url = '/dirigible/services/js-secured/voting/admin/players.js?result=true';
 			$scope.data = false;
                 
 			$http.get(url)
@@ -126,7 +124,6 @@
 		}
 	</script>
     
-    <script src="../../../components/d3/d3.v3.min.js"></script>
     <script>
     
     var width = 960,
@@ -150,7 +147,7 @@
       .append("g")
         .attr("transform", "translate(" + ((width / 2)+100)+ "," + ((height / 2)-60) + ")");
     
-    d3.csv("/dirigible/js-secured/voting/admin/players.js?resultPlain=true", function(error, data) {
+    d3.csv("/dirigible/services/js-secured/voting/admin/players.js?resultPlain=true", function(error, data) {
     
       data.forEach(function(d) {
         d.votes = +d.votes;

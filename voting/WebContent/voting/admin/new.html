@@ -9,8 +9,6 @@
 
 <title>Add Player</title>
 
-<link rel="stylesheet"
-	href="../../../components/bootstrap/dist/css/bootstrap.min.css">
 <style>
 .selected-true {
 	background-color: #428bca;
@@ -109,7 +107,7 @@
 	<script type="text/javascript">
 		function ManageController($scope, $http){
 			
-			var url = '/dirigible/js-secured/voting/admin/players.js';
+			var url = '/dirigible/services/js-secured/voting/admin/players.js';
 			
 			$http.get(url)
 			.success(function(data){
